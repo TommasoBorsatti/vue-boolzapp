@@ -69,6 +69,16 @@ margin: 0px 6px;
   background-color:#8EDAFC;
   flex-basis: 65px;
   flex-shrink: 0;
+  padding: 0px 18px;
+}
+
+.noti-silencer{
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
 }
 
 .con-content{
@@ -77,7 +87,8 @@ margin: 0px 6px;
   overflow-y: auto;
 }
 
-.friend-recap-data{
+.friend-recap-data,
+.noti-recap-data{
   margin-left: 12px;
   text-align: left;
 }
@@ -120,4 +131,8 @@ nav .right-side > i{
   color: #B1B1B1;
   margin: 0px 6px;
   font-size: 14px;
+}
+
+.noti-silencer{
+  color: #8EDAFC;
 }
