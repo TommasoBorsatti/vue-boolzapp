@@ -108,6 +108,18 @@ margin: 0px 6px;
   background-color: #F3EEEA;
 }
 
+.input-bar > .left-side,
+.input-bar > .right-side{
+  flex-basis: 10%;
+  justify-content: center;
+
+}
+
+.input-bar > .central-side{
+  flex-basis: 80%;
+  justify-content: center;
+}
+
 /* MIX */
 
 .flex-center{
@@ -135,4 +147,17 @@ nav .right-side > i{
 
 .noti-silencer{
   color: #8EDAFC;
+}
+
+.input-bar i{
+  color: #6B7376;
+  font-size: 18px;
+}
+
+.input-bar input{
+  width: 700px;
+  height: 40px;
+  padding: 0px 15px;
+  border: none;
+  border-radius: 3px;
 }
