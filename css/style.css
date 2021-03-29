@@ -98,9 +98,6 @@ li.contact{
  margin: 3px 0;
 }
 
-.friend-data{
-  margin-left: 15px;
-}
 
 /* Messenger Section */
 
@@ -152,8 +149,9 @@ li.contact{
 
 /* TYPO */
 
-.fontAwesome {
-  font-family: 'Helvetica', FontAwesome, sans-serif;
+.utent-txt{
+  background-color: green;
+
 }
 
 ul{

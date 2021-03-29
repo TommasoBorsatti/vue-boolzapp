@@ -86,39 +86,9 @@
     <div class="con-content">
       <!-- lista dei contatti -->
       <ul>
-        <li class="contact flex">
-          <div class="friend-avatar">
-            <img src="img/avatar_1.jpg" alt="immagine di un contatto">
-          </div>
-          <div class="friend-data">
-            <h5>Mino Ciccini</h5>
-          </div>
+        <li class="flex contact" v-for= "(contact, index) in rubrica">{{contact.nome}} {{contact.cognome}}
+          <img :src="rubrica[index].avatar" alt="immagine di un contatto" class= "friend-avatar">
         </li>
-        <li class="contact flex">
-          <div class="friend-avatar">
-            <img src="img/avatar_2.jpg" alt="immagine di un contatto">
-          </div>
-          <div class="friend-data">
-            <h5>Larderello Bohr</h5>
-          </div>
-        </li>
-        <li class="contact flex">
-          <div class="friend-avatar">
-            <img src="img/avatar_3.jpg" alt="immagine di un contatto">
-          </div>
-          <div class="friend-data">
-            <h5>Pigiamino Morbidozzi</h5>
-          </div>
-        </li>
-        <li class="contact flex">
-          <div class="friend-avatar">
-            <img src="img/avatar_4.jpg" alt="immagine di un contatto">
-          </div>
-          <div class="friend-data">
-            <h5>King Rum</h5>
-          </div>
-        </li>
-
       </ul>
       <!-- lista dei contatti -->
 
@@ -152,6 +122,12 @@
     <!-- /barra navigazione del messenger -->
     <!-- finestra principale del messenger -->
     <div class="messenger-core">
+
+      <ul >
+        <li :class = "sender">{{txt}}</li>
+
+      </ul>
+
     </div>
     <!-- /finestra principale del messenger -->
     <!-- barra di input del messenger -->
@@ -161,7 +137,7 @@
       </div>
 
       <div class="central-side flex-center">
-        <input type="text" name="" value="" placeholder="scrivi un messaggio">
+        <input v-model = "txt" type="text" placeholder="scrivi un messaggio">
       </div>
 
       <div class="right-side flex-center">
