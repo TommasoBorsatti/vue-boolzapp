@@ -20,14 +20,15 @@ body{
 }
 
 .con-column{
-  background-color: lightblue;
+  background-color: #fff;
   flex-basis: 30%;
   flex-direction: column;
 }
 
 .messenger{
   flex-basis: 70%;
-
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 nav{
@@ -39,11 +40,24 @@ nav{
 
 }
 
+.noti-bar{
+  background-color:#8EDAFC;
+  height: 70px
+}
+
 .con-content{
   padding: 8px 12px;
   text-align: justify;
 }
 
+.messenger-core{
+
+}
+
+.input-bar{
+  height: 60px;
+  background-color: #F3EEEA;
+}
 
 /* MIX */
 
