@@ -92,6 +92,15 @@ margin: 0px 6px;
   overflow-y: auto;
 }
 
+li.contact{
+ padding: 4px 5px;
+ margin: 3px 0;
+}
+
+.friend-data{
+  margin-left: 15px;
+}
+
 /* Messenger Section */
 
 .friend-recap-data,
@@ -145,6 +154,10 @@ margin: 0px 6px;
   font-family: 'Helvetica', FontAwesome, sans-serif;
 }
 
+ul{
+  list-style: none;
+}
+
 /* INPUT-BUTTONS-ICONS */
 
 i{
@@ -182,3 +195,7 @@ input{
   height: 35px;
   margin: 5px 0;
 }
+
+input:focus{
+  outline: none;
+};
