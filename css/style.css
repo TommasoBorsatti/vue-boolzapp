@@ -35,10 +35,11 @@ body{
 
 nav{
   background-color: #EAEAEA;
-  flex-basis: 10%;
+  flex-basis: 60px;
   justify-content: space-between;
   padding: 4px 8px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 #msn-nav{
@@ -66,12 +67,14 @@ margin: 0px 6px;
 
 .noti-bar{
   background-color:#8EDAFC;
-  flex-basis: 12%;
+  flex-basis: 65px;
+  flex-shrink: 0;
 }
 
 .con-content{
   padding: 8px 12px;
   text-align: justify;
+  overflow-y: auto;
 }
 
 .friend-recap-data{
@@ -85,7 +88,8 @@ margin: 0px 6px;
 
 .messenger-core{
   background-image: url(../img/mine.jpg);
-  flex-basis: 80%;
+  flex-basis: 82%;
+  overflow-y: auto;
 }
 
 .input-bar{
