@@ -86,9 +86,16 @@
     <div class="con-content">
       <!-- lista dei contatti -->
       <ul>
-        <li class="flex contact" v-for= "(contact, index) in rubrica">{{contact.nome}} {{contact.cognome}}
-          <img :src="rubrica[index].avatar" alt="immagine di un contatto" class= "friend-avatar">
-        </li>
+
+      <li class="contact flex" v-for= "(contact, index) in rubrica">
+        <div class="friend-avatar">
+            <img :src="rubrica[index].avatar" alt="immagine di un contatto">
+          </div>
+          <div class="friend-data">
+            <h5>{{contact.nome}} {{contact.cognome}}</h5>
+        </div>
+      </li>
+
       </ul>
       <!-- lista dei contatti -->
 
@@ -125,7 +132,6 @@
 
       <ul >
         <li :class = "sender">{{txt}}</li>
-
       </ul>
 
     </div>
