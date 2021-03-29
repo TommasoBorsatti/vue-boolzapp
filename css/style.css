@@ -16,7 +16,6 @@ body{
   max-width: 80%;
   margin: auto;
   height: 90vh;
-  background-color: green;
 }
 
 .con-column{
@@ -33,7 +32,7 @@ body{
 
 nav{
   background-color: #EAEAEA;
-  height: 60px;
+  flex-basis: 10%;
   justify-content: space-between;
   padding: 4px 8px;
   align-items: center;
@@ -42,7 +41,7 @@ nav{
 
 .noti-bar{
   background-color:#8EDAFC;
-  height: 70px
+  flex-basis: 12%;
 }
 
 .con-content{
@@ -51,11 +50,12 @@ nav{
 }
 
 .messenger-core{
-
+  background-image: url(../img/mine.jpg);
+  flex-basis: 80%;
 }
 
 .input-bar{
-  height: 60px;
+  flex-basis: 10%;
   background-color: #F3EEEA;
 }
 
