@@ -81,11 +81,18 @@ margin: 0px 6px;
   align-items: center;
 }
 
+.search-bar{
+  background-color: #F3EEEA;
+  justify-content: center;
+}
+
 .con-content{
   padding: 8px 12px;
   text-align: justify;
   overflow-y: auto;
 }
+
+/* Messenger Section */
 
 .friend-recap-data,
 .noti-recap-data{
@@ -100,6 +107,8 @@ margin: 0px 6px;
 .messenger-core{
   background-image: url(../img/mine.jpg);
   flex-basis: 82%;
+  padding: 4px 8px;
+  text-align: justify;
   overflow-y: auto;
 }
 
@@ -112,7 +121,6 @@ margin: 0px 6px;
 .input-bar > .right-side{
   flex-basis: 10%;
   justify-content: center;
-
 }
 
 .input-bar > .central-side{
@@ -132,6 +140,10 @@ margin: 0px 6px;
 }
 
 /* TYPO */
+
+.fontAwesome {
+  font-family: 'Helvetica', FontAwesome, sans-serif;
+}
 
 /* INPUT-BUTTONS-ICONS */
 
@@ -154,10 +166,19 @@ nav .right-side > i{
   font-size: 18px;
 }
 
-.input-bar input{
-  width: 700px;
-  height: 40px;
+input{
   padding: 0px 15px;
-  border: none;
   border-radius: 3px;
+  border: none;
+}
+
+.input-bar input{
+  height: 40px;
+  width: 700px;
+}
+
+.search-bar input{
+  width: 354px;
+  height: 35px;
+  margin: 5px 0;
 }
