@@ -21,14 +21,37 @@ body{
 
 .con-column{
   background-color: lightblue;
-  height: 100%;
   flex-basis: 30%;
+  flex-direction: column;
+}
+
+.messenger{
+  flex-basis: 70%;
+
+}
+
+nav{
+  background-color: #EAEAEA;
+  height: 60px;
+  justify-content: space-between;
+  padding: 4px 8px;
+  align-items: center;
+
+}
+
+.con-content{
+  padding: 8px 12px;
+  text-align: justify;
 }
 
 
 /* MIX */
 
-.flex{
+.flex-center{
   display: flex;
   align-items: center;
+}
+
+.flex{
+  display: flex;
 }
