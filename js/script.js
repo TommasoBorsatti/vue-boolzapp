@@ -7,8 +7,11 @@ const App = new Vue (
 
     data: {
 
-      txt: "",
+      newTxt: "",
       selected: 0,
+      utentMsg: [
+
+      ],
       sender: 'utent-txt',
 
 
@@ -52,10 +55,12 @@ const App = new Vue (
 
     methods:{
 
-
-
-
-
+      addMsg: function(){
+        if (this.newTxt != "") {
+          this.utentMsg.push(this.newTxt);
+        }
+        this.newTxt = "";
+      },
 
 
     },

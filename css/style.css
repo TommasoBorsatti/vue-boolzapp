@@ -114,7 +114,7 @@ li.contact{
 .messenger-core{
   background-image: url(../img/mine.jpg);
   flex-basis: 82%;
-  padding: 4px 8px;
+  padding: 30px 85px;
   text-align: justify;
   overflow-y: auto;
 }
@@ -150,7 +150,13 @@ li.contact{
 /* TYPO */
 
 .utent-txt{
-  background-color: green;
+  background-color: #D5F9BA;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 20px;
+  padding: 4px 8px;
+  margin: 10px 0;
 
 }
 
