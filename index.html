@@ -128,9 +128,44 @@
     <div class="messenger-core">
 
       <ul >
-        <li  v-if = "contact.visible == true" v-for="(contact, index) in rubrica"> {{contact.msg[index].text}}</li>
+        <li  v-if= msg.status=="sent" v-for="(msg, index) in rubrica[0].msg">
+          <div class="bubble sent" >
+            <div class="msg-txt">
+              {{msg.text}}
+            </div>
+            <div class="internal flex">
+              <div class="msg-date flex">
+                {{msg.date}} {{msg.time}}
+              </div>
+          </div>
+        </li>
+        <li  v-if= msg.status=="received" v-for="(msg, index) in rubrica[0].msg">
+          <div class="bubble received" >
+            <div class="msg-txt">
+              {{msg.text}}
+            </div>
+            <div class="internal flex">
+              <div class="msg-date flex">
+                {{msg.date}} {{msg.time}}
+              </div>
+            </div>
+          </div>
+        </li>
 
-        <li :class = "sender" v-for="(msg, index) in utentMsg" >{{utentMsg[index]}} </li>
+
+        <li v-for="(msg, index) in utentMsg" >
+          <div class="bubble sent" >
+            <div class="msg-txt">
+              {{utentMsg[index]}}
+            </div>
+            <div class="internal flex">
+              <div class="msg-date flex">
+                {{msg.date}} {{msg.time}}
+              </div>
+          </div>
+
+        </li>
+
       </ul>
 
     </div>

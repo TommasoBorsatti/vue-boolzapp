@@ -118,6 +118,8 @@ li.contact{
   padding: 30px 85px;
   text-align: justify;
   overflow-y: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .input-bar{
@@ -148,6 +150,29 @@ li.contact{
   display: flex;
 }
 
+.bubble{
+  border-radius: 10px;
+  padding:5px 10px;
+  margin: 10px 0;
+  margin-left: auto;
+  min-width: 300px;
+}
+
+.sent{
+  background-color: #D5F9BA;
+}
+
+.received{
+  background-color: #fff;
+}
+
+.internal{
+  justify-content: flex-end;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+}
+
+
 /* TYPO */
 
 .utent-txt{
@@ -163,6 +188,18 @@ li.contact{
 
 ul{
   list-style: none;
+}
+
+.msg-txt{
+  flex-basis: 100%;
+  padding: 5px 0;
+}
+
+.msg-date{
+  font-size: 10px;
+  align-items: flex-end;
+  color:  #B1B1B1;
+
 }
 
 /* INPUT-BUTTONS-ICONS */
