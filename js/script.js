@@ -8,15 +8,17 @@ const App = new Vue (
     data: {
 
       newTxt: "",
+      contactIndex: 0,
       utentMsg: [
 
       ],
-      sender: 'utent-txt',
+      bubbleColor: 'sent',
       rubrica:[
         {
           nome: "Mino",
           cognome: "Ciccini",
           avatar: "img/avatar_1.jpg",
+          accessTime: "09:20",
           visible: true,
           msg:[
             {
@@ -40,6 +42,7 @@ const App = new Vue (
           nome: "Larderello ",
           cognome: "Bohr",
           avatar: "img/avatar_2.jpg",
+          accessTime: "10:40",
           visible: false,
           msg:[
             {
@@ -63,6 +66,7 @@ const App = new Vue (
           nome: "Pigiamino",
           cognome: "Morbidozzi",
           avatar: "img/avatar_3.jpg",
+          accessTime: "04:20",
           visible: false,
           msg:[
             {
@@ -86,6 +90,7 @@ const App = new Vue (
           nome: "King",
           cognome: "Rum",
           avatar: "img/avatar_4.jpg",
+          accessTime: "11:10",
           visible: false,
           msg:[
             {
@@ -105,6 +110,10 @@ const App = new Vue (
     },
 
     methods:{
+
+      chooseContact: function(i){
+        this.contactIndex = i;
+      },
 
       addMsg: function(){
         if (this.newTxt != "") {

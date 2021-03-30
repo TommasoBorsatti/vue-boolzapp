@@ -86,7 +86,7 @@
     <div class="con-content">
       <!-- lista dei contatti -->
       <ul>
-        <li class="contact flex" v-for= "(contact, index) in rubrica">
+        <li class="contact flex" v-for= "(contact, index) in rubrica"  @click ="chooseContact(index)">
         <div class="friend-avatar">
             <img :src="rubrica[index].avatar" alt="immagine di un contatto">
           </div>
@@ -108,12 +108,11 @@
     <nav id="msn-nav" class="flex">
       <div class="left-side flex-center">
         <div class="friend-avatar">
-          <img src="img/avatar_1.jpg" alt="avatar del destinatario">
+          <img :src="rubrica[contactIndex].avatar" alt="avatar del destinatario">
         </div>
         <div class="friend-recap-data">
-          <h5 class="friend-
-          name">Mino Ciccini</h5>
-          <h6 class="login-time">Ultimo accesso oggi alle: </h6>
+          <h5 class="friend-name">{{rubrica[contactIndex].nome}} {{rubrica[contactIndex].cognome}}</h5>
+          <h6 class="login-time">Ultimo accesso oggi alle: {{rubrica[contactIndex].accessTime}}</h6>
         </div>
       </div>
 
@@ -126,10 +125,10 @@
     <!-- /barra navigazione del messenger -->
     <!-- finestra principale del messenger -->
     <div class="messenger-core">
-
-      <ul >
-        <li  v-if= msg.status=="sent" v-for="(msg, index) in rubrica[0].msg">
-          <div class="bubble sent" >
+      <ul class="messenger-list">
+        <!-- messaggi in memoria (da rivedere la struttura a 2 div) -->
+        <li  v-if= "(msg.status == 'sent')? bubbleColor = 'sent': bubbleColor = 'received'" v-for="(msg, index) in rubrica[contactIndex].msg">
+          <div :class= "bubbleColor" class="bubble" >
             <div class="msg-txt">
               {{msg.text}}
             </div>
@@ -139,20 +138,8 @@
               </div>
           </div>
         </li>
-        <li  v-if= msg.status=="received" v-for="(msg, index) in rubrica[0].msg">
-          <div class="bubble received" >
-            <div class="msg-txt">
-              {{msg.text}}
-            </div>
-            <div class="internal flex">
-              <div class="msg-date flex">
-                {{msg.date}} {{msg.time}}
-              </div>
-            </div>
-          </div>
-        </li>
-
-
+        <!-- /messaggi in memoria (da rivedere la struttura a 2 div) -->
+        <!-- nuovi messaggi utente -->
         <li v-for="(msg, index) in utentMsg" >
           <div class="bubble sent" >
             <div class="msg-txt">
@@ -163,9 +150,8 @@
                 {{msg.date}} {{msg.time}}
               </div>
           </div>
-
         </li>
-
+        <!-- /nuovi messaggi utente -->
       </ul>
 
     </div>
