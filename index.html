@@ -86,8 +86,7 @@
     <div class="con-content">
       <!-- lista dei contatti -->
       <ul>
-
-      <li class="contact flex" v-for= "(contact, index) in rubrica">
+        <li class="contact flex" v-for= "(contact, index) in rubrica">
         <div class="friend-avatar">
             <img :src="rubrica[index].avatar" alt="immagine di un contatto">
           </div>
@@ -95,10 +94,8 @@
             <h5>{{contact.nome}} {{contact.cognome}}</h5>
         </div>
       </li>
-
       </ul>
-      <!-- lista dei contatti -->
-
+      <!-- /lista dei contatti -->
     </div>
     <!-- /sezione contenuti principali della colonna contatti -->
 
@@ -131,7 +128,9 @@
     <div class="messenger-core">
 
       <ul >
-        <li :class = "sender" v-for="(msg, index) in utentMsg">{{utentMsg[index]}}</li>
+        <li  v-if = "contact.visible == true" v-for="(contact, index) in rubrica"> {{contact.msg[index].text}}</li>
+
+        <li :class = "sender" v-for="(msg, index) in utentMsg" >{{utentMsg[index]}} </li>
       </ul>
 
     </div>
