@@ -116,10 +116,7 @@ li.contact{
   background-image: url(../img/mine.jpg);
   flex-basis: 82%;
   padding: 30px 85px;
-  text-align: justify;
   overflow-y: auto;
-  display: flex;
-  justify-content: flex-end;
 }
 
 .input-bar{
@@ -150,21 +147,28 @@ li.contact{
   display: flex;
 }
 
+.message{
+  display: flex
+}
+
 .bubble{
   border-radius: 10px;
   padding:5px 10px;
   margin: 10px 0;
-  margin-left: auto;
   min-width: 300px;
+  max-width: 300px
 }
 
 .sent{
   background-color: #D5F9BA;
+  margin-left: auto;
+
 
 }
 
 .received{
   background-color: #fff;
+  margin-right: auto;
 
 }
 
@@ -193,7 +197,6 @@ ul{
 }
 
 .msg-txt{
-  flex-basis: 100%;
   padding: 5px 0;
 }
 

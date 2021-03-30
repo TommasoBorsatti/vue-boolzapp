@@ -126,8 +126,8 @@
     <!-- finestra principale del messenger -->
     <div class="messenger-core">
       <ul class="messenger-list">
-        <!-- messaggi in memoria (da rivedere la struttura a 2 div) -->
-        <li  v-if= "(msg.status == 'sent')? bubbleColor = 'sent': bubbleColor = 'received'" v-for="(msg, index) in rubrica[contactIndex].msg">
+        <!-- messaggi in memoria -->
+        <li class="message" v-if= "(msg.status == 'sent')? bubbleColor = 'sent': bubbleColor = 'received'" v-for="(msg, index) in rubrica[contactIndex].msg">
           <div :class= "bubbleColor" class="bubble" >
             <div class="msg-txt">
               {{msg.text}}
@@ -138,20 +138,7 @@
               </div>
           </div>
         </li>
-        <!-- /messaggi in memoria (da rivedere la struttura a 2 div) -->
-        <!-- nuovi messaggi utente -->
-        <li v-for="(msg, index) in utentMsg" >
-          <div class="bubble sent" >
-            <div class="msg-txt">
-              {{utentMsg[index]}}
-            </div>
-            <div class="internal flex">
-              <div class="msg-date flex">
-                {{msg.date}} {{msg.time}}
-              </div>
-          </div>
-        </li>
-        <!-- /nuovi messaggi utente -->
+        <!-- /messaggi in memoria  -->
       </ul>
 
     </div>

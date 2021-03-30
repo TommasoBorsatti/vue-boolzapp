@@ -7,7 +7,7 @@ const App = new Vue (
 
     data: {
 
-      newTxt: "",
+      newTxt: [],
       contactIndex: 0,
       utentMsg: [
 
@@ -117,7 +117,12 @@ const App = new Vue (
 
       addMsg: function(){
         if (this.newTxt != "") {
-          this.utentMsg.push(this.newTxt);
+          this.rubrica[this.contactIndex].msg.push({
+            date: "10/01/2020 15:50:00 ",
+            text: this.newTxt,
+            status: "sent",
+
+          });
         }
         this.newTxt = "";
       },
