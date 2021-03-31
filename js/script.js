@@ -125,14 +125,14 @@ const App = new Vue (
         }
         this.newTxt = "";
         // trigger per timer integrato al click!
-        setTimeOut(this.autoreply, 2000);
+        setTimeout(this.autoreply, 2000);
       },
 
       autoreply: function(){
 
         this.rubrica[this.contactIndex].msg.push({
           date: "10/01/2020 15:50:00 ",
-          text: "Bella lì!",
+          text: "Oooohhh bada chie...",
           status: "received",
         });
 

@@ -79,7 +79,8 @@
     <!-- /barra delle notifiche  -->
     <!-- barra di ricerca -->
     <div class="search-bar flex-center">
-      <input type="text" class="fontAwesome" name="" value="" placeholder="cerca o inizia una nuova chat">
+      <label for="search-input"><i class="fas fa-search"></i></label>
+      <input id="search-input" type="text" class="fontAwesome" name="" value="" placeholder="cerca o inizia una nuova chat">
     </div>
     <!-- /barra di ricerca -->
     <!-- sezione contenuti principali della colonna contatti -->
@@ -127,8 +128,8 @@
     <div class="messenger-core">
       <ul class="messenger-list">
         <!-- messaggi in memoria -->
-        <li class="message" v-if= "(msg.status == 'sent')? bubbleColor = 'sent': bubbleColor = 'received'" v-for="(msg, index) in rubrica[contactIndex].msg">
-          <div :class= "bubbleColor" class="bubble" >
+        <li class="message" v-for="(msg, index) in rubrica[contactIndex].msg">
+          <div :class= "bubbleColor=msg.status" class="bubble">
             <div class="msg-txt">
               {{msg.text}}
             </div>

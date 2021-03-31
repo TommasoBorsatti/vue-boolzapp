@@ -17,7 +17,7 @@ body{
 
 .main-window{
   max-width: 80%;
-  min-width: 950px;
+  min-width: 500px;
   margin: auto;
   height: 90vh;
 }
@@ -57,6 +57,10 @@ nav{
   overflow: hidden;
 }
 
+.my-avatar{
+  margin-left: 4px;
+}
+
 .username{
 margin: 0px 6px;
 }
@@ -83,8 +87,7 @@ margin: 0px 6px;
 }
 
 .search-bar{
-  background-color: #F3EEEA;
-  justify-content: center;
+  background-color: #FFF;
 }
 
 .con-content{
@@ -149,6 +152,14 @@ li.contact{
 
 /* MESSAGE */
 
+.messenger-lis{
+  width:100%
+}
+
+.message{
+  width: 100%;
+}
+
 .bubble{
   border-radius: 10px;
   padding:5px 10px;
@@ -212,9 +223,18 @@ nav .right-side > i{
   color: #8EDAFC;
 }
 
+.search-bar i{
+  margin: 0px 0px;
+  margin-left: 6px;
+  padding: 9px 5px;
+  background-color: #fff;
+  color: #B1B1B1;
+}
+
 .input-bar i{
   color: #6B7376;
   font-size: 18px;
+  padding: 0px 8px;
 }
 
 input{
@@ -229,9 +249,10 @@ input{
 }
 
 .search-bar input{
-  width: 354px;
+  width: 280px;
   height: 35px;
   margin: 5px 0;
+  cursor: pointer;
 }
 
 input:focus{
