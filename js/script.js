@@ -125,29 +125,29 @@ const App = new Vue (
       autoreply: function(){
         this.rubrica[this.contactIndex].msg.push({
           date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-          text: "Oooohhh bada chie...",
+          text: "Ok!",
           status: "received",
         });
 
       },
 
       // METODO CON FUNZIONE
-      // searchId: function(){
-      //
-      //   if (this.searchTxt != "") {
-      //
-      //     for (let i = 0; i < this.rubrica.length; i++) {
-      //       if (!this.rubrica[i].nome.toLowerCase().includes(this.searchTxt.toLowerCase())) {
-      //         this.rubrica[i].visible = false;
-      //       }
-      //     }
-      //     this.searchTxt = "";
-      //   } else {
-      //       for (let i = 0; i < this.rubrica.length; i++) {
-      //         this.rubrica[i].visible = true;
-      //       }
-      //     }
-      // },
+      searchId: function(){
+
+        if (this.searchTxt != "") {
+
+          for (let i = 0; i < this.rubrica.length; i++) {
+            if (!this.rubrica[i].nome.toLowerCase().includes(this.searchTxt.toLowerCase())) {
+              this.rubrica[i].visible = false;
+            }
+          }
+          
+        } else {
+            for (let i = 0; i < this.rubrica.length; i++) {
+              this.rubrica[i].visible = true;
+            }
+          }
+      },
 
     },
 
