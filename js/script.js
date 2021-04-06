@@ -13,8 +13,7 @@ const App = new Vue (
       bubbleColor: 'sent',
       rubrica:[
         {
-          nome: "Mino",
-          cognome: "Ciccini",
+          nome: "Mino Ciccini",
           avatar: "img/avatar_1.jpg",
           accessTime: "09:20",
           visible: true,
@@ -37,8 +36,7 @@ const App = new Vue (
           ],
         },
         {
-          nome: "Larderello ",
-          cognome: "Bohr",
+          nome: "Larderello Bohr",
           avatar: "img/avatar_2.jpg",
           accessTime: "10:40",
           visible: true,
@@ -61,8 +59,7 @@ const App = new Vue (
           ],
         },
         {
-          nome: "Pigiamino",
-          cognome: "Morbidozzi",
+          nome: "Pigiamino Morbidozzi",
           avatar: "img/avatar_3.jpg",
           accessTime: "04:20",
           visible: true,
@@ -85,8 +82,7 @@ const App = new Vue (
           ],
         },
         {
-          nome: "King",
-          cognome: "Rum",
+          nome: "King Rum",
           avatar: "img/avatar_4.jpg",
           accessTime: "11:10",
           visible: true,
@@ -138,14 +134,15 @@ const App = new Vue (
       searchId: function(index){
 
         if (this.searchTxt != "") {
-          for (var i = 0; i < this.rubrica.length; i++) {
-            if (!this.rubrica[i].nome.includes(this.searchTxt)) {
+
+          for (let i = 0; i < this.rubrica.length; i++) {
+            if (!this.rubrica[i].nome.toLowerCase().includes(this.searchTxt.toLowerCase())) {
               this.rubrica[i].visible = false;
             }
           }
           this.searchTxt = "";
         } else {
-            for (var i = 0; i < this.rubrica.length; i++) {
+            for (let i = 0; i < this.rubrica.length; i++) {
               this.rubrica[i].visible = true;
             }
           }
