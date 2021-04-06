@@ -131,22 +131,23 @@ const App = new Vue (
 
       },
 
-      searchId: function(index){
-
-        if (this.searchTxt != "") {
-
-          for (let i = 0; i < this.rubrica.length; i++) {
-            if (!this.rubrica[i].nome.toLowerCase().includes(this.searchTxt.toLowerCase())) {
-              this.rubrica[i].visible = false;
-            }
-          }
-          this.searchTxt = "";
-        } else {
-            for (let i = 0; i < this.rubrica.length; i++) {
-              this.rubrica[i].visible = true;
-            }
-          }
-      },
+      // METODO CON FUNZIONE
+      // searchId: function(){
+      //
+      //   if (this.searchTxt != "") {
+      //
+      //     for (let i = 0; i < this.rubrica.length; i++) {
+      //       if (!this.rubrica[i].nome.toLowerCase().includes(this.searchTxt.toLowerCase())) {
+      //         this.rubrica[i].visible = false;
+      //       }
+      //     }
+      //     this.searchTxt = "";
+      //   } else {
+      //       for (let i = 0; i < this.rubrica.length; i++) {
+      //         this.rubrica[i].visible = true;
+      //       }
+      //     }
+      // },
 
     },
 
