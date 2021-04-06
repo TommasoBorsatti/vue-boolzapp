@@ -82,8 +82,8 @@
     <!-- /barra delle notifiche  -->
     <!-- barra di ricerca -->
     <div class="search-bar flex-center">
-      <label for="search-input"><i class="fas fa-search"></i></label>
-      <input id="search-input" type="text" class="fontAwesome" name="" value="" placeholder="cerca o inizia una nuova chat">
+      <label @click="searchId" for="search-input"><i class="fas fa-search"></i></label>
+      <input id="search-input" @keyup.enter="searchId()" v-model = "searchTxt" type="text" class="fontAwesome" name="" value="" placeholder="cerca o inizia una nuova chat">
     </div>
     <!-- /barra di ricerca -->
     <!-- sezione contenuti principali della colonna contatti -->
@@ -92,9 +92,9 @@
       <ul>
         <li class="contact flex" v-for= "(contact, index) in rubrica"  @click ="chooseContact(index)">
         <div class="friend-avatar">
-            <img :src="rubrica[index].avatar" alt="immagine di un contatto">
+            <img v-show = "rubrica[index].visible == true" :src="rubrica[index].avatar" alt="immagine di un contatto">
           </div>
-          <div class="friend-data">
+          <div v-show = "rubrica[index].visible == true" class="friend-data">
             <h5>{{contact.nome}} {{contact.cognome}}</h5>
         </div>
       </li>

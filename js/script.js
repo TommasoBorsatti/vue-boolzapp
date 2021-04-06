@@ -8,10 +8,8 @@ const App = new Vue (
     data: {
 
       newTxt: [],
+      searchTxt: "",
       contactIndex: 0,
-      utentMsg: [
-
-      ],
       bubbleColor: 'sent',
       rubrica:[
         {
@@ -43,7 +41,7 @@ const App = new Vue (
           cognome: "Bohr",
           avatar: "img/avatar_2.jpg",
           accessTime: "10:40",
-          visible: false,
+          visible: true,
           msg:[
             {
               date: '20/03/2020 16:30:00',
@@ -67,7 +65,7 @@ const App = new Vue (
           cognome: "Morbidozzi",
           avatar: "img/avatar_3.jpg",
           accessTime: "04:20",
-          visible: false,
+          visible: true,
           msg:[
             {
               date: '28/03/2020 10:10:40',
@@ -91,7 +89,7 @@ const App = new Vue (
           cognome: "Rum",
           avatar: "img/avatar_4.jpg",
           accessTime: "11:10",
-          visible: false,
+          visible: true,
           msg:[
             {
               date: '10/01/2020 15:30:55',
@@ -129,13 +127,28 @@ const App = new Vue (
       },
 
       autoreply: function(){
-
         this.rubrica[this.contactIndex].msg.push({
           date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           text: "Oooohhh bada chie...",
           status: "received",
         });
 
+      },
+
+      searchId: function(index){
+
+        if (this.searchTxt != "") {
+          for (var i = 0; i < this.rubrica.length; i++) {
+            if (!this.rubrica[i].nome.includes(this.searchTxt)) {
+              this.rubrica[i].visible = false;
+            }
+          }
+          this.searchTxt = "";
+        } else {
+            for (var i = 0; i < this.rubrica.length; i++) {
+              this.rubrica[i].visible = true;
+            }
+          }
       },
 
     },
