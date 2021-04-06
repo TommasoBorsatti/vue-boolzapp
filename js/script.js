@@ -118,20 +118,20 @@ const App = new Vue (
       addMsg: function(){
         if (this.newTxt != "") {
           this.rubrica[this.contactIndex].msg.push({
-            date: "10/01/2020 15:50:00 ",
+            date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
             text: this.newTxt,
             status: "sent",
           });
         }
         this.newTxt = "";
         // trigger per timer integrato al click!
-        setTimeout(this.autoreply, 2000);
+        setTimeout(this.autoreply, 3000);
       },
 
       autoreply: function(){
 
         this.rubrica[this.contactIndex].msg.push({
-          date: "10/01/2020 15:50:00 ",
+          date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
           text: "Oooohhh bada chie...",
           status: "received",
         });
