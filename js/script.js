@@ -139,9 +139,11 @@ const App = new Vue (
           for (let i = 0; i < this.rubrica.length; i++) {
             if (!this.rubrica[i].nome.toLowerCase().includes(this.searchTxt.toLowerCase())) {
               this.rubrica[i].visible = false;
+            } else {
+              this.rubrica[i].visible = true;
             }
           }
-          
+
         } else {
             for (let i = 0; i < this.rubrica.length; i++) {
               this.rubrica[i].visible = true;
