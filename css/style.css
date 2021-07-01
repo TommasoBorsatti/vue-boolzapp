@@ -105,7 +105,7 @@ margin: 0px 6px;
 
 .con-content{
   padding: 8px 0px;
-  overflow-y: auto;
+  /*overflow-y: auto;*/
 }
 
 li.contact{
@@ -113,6 +113,7 @@ li.contact{
  cursor: pointer;
  color: #3b3939;
  font-size: 20px;
+ position: relative;
 }
 
 li.contact:hover{
@@ -230,7 +231,6 @@ li.contact .arrow{
   margin-left: auto;
   color: #B1B1B1;
   padding-right: 3px;
-  z-index: 200;
 }
 
 .delete-window{
@@ -263,6 +263,11 @@ li.contact .arrow{
 .received .delete-window{
   left:0;
   transform: translate(10%, 95%);
+}
+
+.contact .delete-window{
+  right:0;
+  transform: translate(90%, 87%);
 }
 
 .internal{
@@ -299,19 +304,10 @@ li.contact .arrow{
   margin-left: auto;
 }
 
-/* .sent:hover{
-  background-color: #bbd1a9;
-} */
-
 .received{
   background-color: #fff;
   margin-right: auto;
 }
-
-/* .received:hover{
-  background-color: rgb(243, 236, 236);
-} */
-
 
 
 /* TYPO */

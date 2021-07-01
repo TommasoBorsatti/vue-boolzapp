@@ -209,6 +209,7 @@ const App = new Vue (
             time: dayjs().format('HH:mm'),
             text: this.newTxt,
             status: "sent",
+            active: false
           });
         }
         this.newTxt = "";
@@ -222,6 +223,7 @@ const App = new Vue (
           time: dayjs().format('HH:mm'),
           text: "Ok! A dopo..",
           status: "received",
+          active: false
         });
 
       },
