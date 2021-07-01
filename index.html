@@ -90,14 +90,27 @@
     <div class="con-content">
       <!-- lista dei contatti -->
       <ul>
-        <li class="contact flex" v-if= "rubrica[index].visible == true" v-for= "(contact, index) in rubrica"  @click ="chooseContact(index)">
-        <div class="friend-avatar">
+        <li class="contact flex" v-if= "rubrica[index].visible == true" v-for= "(contact, index) in rubrica" :class="contact.selected==true? 'selected' : '' "  @click ="chooseContact(index)">
+          <div class="friend-avatar">
             <img :src="rubrica[index].avatar" alt="immagine di un contatto">
           </div>
           <div class="friend-data">
             <h5>{{contact.nome}}</h5>
-        </div>
-      </li>
+          </div>
+          <div class="arrow visual" @click="callToContact(index)">
+            <i class="fas fa-chevron-down arrow" ></i>
+          </div>  
+          <div v-if="contact.active == true">
+            <div class="delete-window">
+              <ul>
+                <li>Info messaggio</li>
+                <li>Rispondi</li>
+                <li>Inoltra messaggio</li>
+                <li>Messaggio importante</li>
+                <li @click="deleteMessage(index)">Elimina messaggio</li>
+              </ul>
+            </div>
+        </li>
       </ul>
       <!-- /lista dei contatti -->
     </div>
@@ -108,7 +121,7 @@
 
   <!-- parte principale del messenger -->
   <div class="messenger flex">
-    <!-- barra navigazione del messengeri -->
+    <!-- barra navigazione del messenger -->
     <nav id="msn-nav" class="flex">
       <div class="left-side flex-center">
         <div class="friend-avatar">
@@ -131,20 +144,33 @@
     <div class="messenger-core">
       <ul class="messenger-list">
         <!-- messaggi in memoria -->
-        <li class="message" v-for="(msg, index) in rubrica[contactIndex].msg">
-          <div :class= "bubbleColor=msg.status" class="bubble">
+        <li class="message" v-for="(msg, index) in rubrica[contactIndex].msg" >
+          <div :class= "bubbleColor=msg.status" class="bubble flex">
             <div class="msg-txt">
               {{msg.text}}
             </div>
-            <div class="internal flex">
-              <div class="msg-date flex">
-                {{msg.date}} {{msg.time}}
-              </div>
+            <div class="msg-date flex">
+              <!--<div class='date hide'>{{msg.date}}</div> --> 
+              <div class="time hide">{{msg.time}}</div> 
+              <div class="arrow visual">
+                <i class="fas fa-chevron-down arrow" @click="callToMsg(index)"  ></i>
+              </div>  
+              <div v-if="msg.active == true">
+                <div class="delete-window">
+                  <ul>
+                    <li>Info messaggio</li>
+                    <li>Rispondi</li>
+                    <li>Inoltra messaggio</li>
+                    <li>Messaggio importante</li>
+                    <li @click="deleteMessage(index)">Elimina messaggio</li>
+                  </ul>
+                </div>
+              </div>        
+            </div>
           </div>
         </li>
         <!-- /messaggi in memoria  -->
       </ul>
-
     </div>
     <!-- /finestra principale del messenger -->
     <!-- barra di input del messenger -->
