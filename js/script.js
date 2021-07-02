@@ -81,6 +81,13 @@ const App = new Vue (
             {
               date: '28/03/21',
               time: '10:10',
+              text: 'Il succo della questione è questo: che ne pensi?',
+              status: 'sent',
+              active: false
+            },
+            {
+              date: '28/03/21',
+              time: '10:10',
               text: 'La Marianna va in campagna',
               status: 'received',
               active: false
@@ -128,22 +135,50 @@ const App = new Vue (
         {
           nome: "Fiona Campiona",
           avatar: "img/avatar_6.jpg",
-          accessTime: "17:10",
+          accessTime: "16:10",
           visible: true,
           selected: false,
           active: false,
           msg:[
             {
               date: '10/01/21',
-              time: '15:30',
-              text: 'Lo sai che ha aperto una nuova pizzeria?',
+              time: '16:30',
+              text: 'Ciao Fiona come stai?',
               status: 'sent',
               active: false
             },
             {
               date: '10/01/21',
-              time: '15:50',
-              text: 'Si, ma preferirei andare al cinema',
+              time: '16:45',
+              text: 'Tutto ok Tom, tu?',
+              status: 'received',
+              active: false
+            },
+            {
+              date: '10/01/21',
+              time: '16:45',
+              text: 'Scusa se ti ho risposto adesso, ma ero impegnata',
+              status: 'received',
+              active: false
+            },
+            {
+              date: '10/01/21',
+              time: '16:47',
+              text: 'Non fa niente! Volevo solo chiederti se eri a casa',
+              status: 'sent',
+              active: false
+            },
+            {
+              date: '10/01/21',
+              time: '16:47',
+              text: 'Sono vicino, magari ti facevo un saluto',
+              status: 'sent',
+              active: false
+            },
+            {
+              date: '10/01/21',
+              time: '16:47',
+              text: 'Eh, non sono in casa: magari ci vediamo stasera!',
               status: 'received',
               active: false
             },
@@ -151,7 +186,7 @@ const App = new Vue (
         },
         {
           nome: "Lapo il Capo",
-          avatar: "img/avatar_5.jpg",
+          avatar: "img/avatar_7.jpg",
           accessTime: "17:10",
           visible: true,
           selected: false,
@@ -160,19 +195,65 @@ const App = new Vue (
             {
               date: '10/01/21',
               time: '15:30',
-              text: 'Lo sai che ha aperto una nuova pizzeria?',
+              text: 'Ehi quanto tempo!',
+              status: 'received',
+              active: false
+            },
+            {
+              date: '10/01/21',
+              time: '15:50',
+              text: 'In effetti, Lapo',
               status: 'sent',
               active: false
             },
             {
               date: '10/01/21',
               time: '15:50',
-              text: 'Si, ma preferirei andare al cinema',
+              text: 'Questo è il mio mumero di lavoro e sto per cambiarlo; cancellalo pure, ci sentiamo sull \'altro',
+              status: 'received',
+              active: false
+            },
+            {
+              date: '10/01/21',
+              time: '15:50',
+              text: 'Molto bene: allora più tardi cancello questa conversazione',
+              status: 'sent',
+              active: false
+            },
+            {
+              date: '10/01/21',
+              time: '15:50',
+              text: 'Perfetto! A domani 🤙 ',
               status: 'received',
               active: false
             },
           ],
         },
+        {
+          nome: "Enrico Mitico",
+          avatar: "img/avatar_8.jpg",
+          accessTime: "17:10",
+          visible: true,
+          selected: false,
+          active: false,
+          msg:[
+            {
+              date: '10/01/21',
+              time: '15:30',
+              text: 'Allora ne parliamo con calma domani',
+              status: 'received',
+              active: false
+            },
+            {
+              date: '10/01/21',
+              time: '15:50',
+              text: 'A domani Enrico',
+              status: 'sent',
+              active: false
+            },
+          ],
+        } 
+
       ],
 
       newTxt: [],
@@ -181,6 +262,10 @@ const App = new Vue (
       contactActionIndex: 0,
       messageIndex:0,
       bubbleColor: 'sent',
+      openPanel: false,
+      emoticons: [
+        '😀','😆','😁','😅','🤣','😂','🙂','😉','😉','😊','😇','🥰','😍','🤩','😘','😗','🍋','🍌','🍍','🥭','🍎','🍏','🍄','🧅','🥯','🍔','🥓','🍟','🍺','🍷','🍸','🥃','🍫',
+      ],
       
 
     },
@@ -221,7 +306,7 @@ const App = new Vue (
         this.rubrica[this.contactIndex].msg.push({
           date: dayjs().format('DD/MM/YY'),
           time: dayjs().format('HH:mm'),
-          text: "Ok! A dopo..",
+          text: "Ok! A dopo allora! 😎",
           status: "received",
           active: false
         });
@@ -280,13 +365,23 @@ const App = new Vue (
       
       },
 
+      callToEmoji: function(){
+        return this.openPanel = !this.openPanel;
+      },
+
+      addEmoji: function(i){
+        return this.newTxt += this.emoticons[i];
+      },
+
       deleteMessage: function(i){
         this.rubrica[this.contactIndex].msg[this.messageIndex].active = false;
-        console.log(this.rubrica[this.contactIndex].msg[this.messageIndex].active);
-        this.rubrica[this.contactIndex].msg.splice(this.messageIndex, 1);
-    
-        
+        this.rubrica[this.contactIndex].msg.splice(this.messageIndex, 1);      
+      },
+
+      deleteConversation: function(i){
+        this.rubrica.splice(this.contactActionIndex, 1);
       }
+      
 
     },
 

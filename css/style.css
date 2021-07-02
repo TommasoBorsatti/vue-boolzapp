@@ -309,6 +309,55 @@ li.contact .arrow{
   margin-right: auto;
 }
 
+.emoji-panel{
+  background-color: #F3EEEA;
+  padding: 9px 10px;
+  width: 801px;
+  height: 200px;
+  transition: height 0.5s;
+}
+
+.emoji-panel h4{
+  color: #6B7376;
+}
+
+.emoji-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.emoticon{
+  font-size: 25px;
+  margin: 5px 6px;
+  cursor: pointer;
+}
+
+.open{
+ display:block;
+}
+
+.open .emoticon{
+  opacity: 1;
+  transition: opacity;
+}
+
+
+.close{
+  height:0px;
+  padding:0;
+  transition: height 0.5s;
+}
+
+.close .emoticon,
+.close h4,
+.close ul{
+  display: none;
+  opacity:0;
+  width: 0px;
+  height: 0px;
+  padding: 0px ;
+  transition: height 0.2s;
+}
 
 /* TYPO */
 

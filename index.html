@@ -35,7 +35,6 @@
   <link rel="icon" type="image/png" sizes="32x32" href="img/ico/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="96x96" href="img/ico/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/ico/favicon-16x16.png">
-  <link rel="manifest" href="/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
@@ -55,7 +54,7 @@
     <nav class="flex">
       <div class="left-side flex-center">
         <div class="my-avatar">
-          <img src="img/avt2.png" alt="avatar dell'user">
+          <img src="img/avt3.png" alt="avatar dell'user">
         </div>
         <h5 class="username">Tommaso Borsatti</h5>
       </div>
@@ -105,7 +104,7 @@
               <ul>
                 <li>Archivia chat</li>
                 <li>Disattiva notifiche</li>
-                <li  @click="deleteMessage(index)">Elimina chat</li>
+                <li  @click="deleteConversation(index)">Elimina chat</li>
                 <li>Fissa chat</li>
                 <li>Segna come da leggere</li>
               </ul>
@@ -172,11 +171,17 @@
         <!-- /messaggi in memoria  -->
       </ul>
     </div>
+    <div class="emoji-panel" :class= " openPanel == true? 'open' : 'close' ">
+      <h4>Recenti</h4>
+      <ul class="emoji-list">
+        <li class='emoticon' v-for="(emoji, index) in emoticons" @click="addEmoji(index)">{{emoticons[index]}}</li>
+      </ul>
+    </div>
     <!-- /finestra principale del messenger -->
     <!-- barra di input del messenger -->
     <div class="input-bar flex-center">
       <div class="left-side flex-center">
-        <i class="far fa-smile"></i>
+        <i class="far fa-smile" @click='callToEmoji'></i>
       </div>
 
       <div class="central-side flex-center">
